@@ -1,0 +1,991 @@
+@font-face {
+  font-family: "Gotham Black";
+  src: url("fonts/Gotham\ Black\ Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gotham Book";
+  src: url("fonts/Gotham\ Book.otf") format("opentype");
+}
+
+body {
+  background-color: #f1e2b0;
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
+  margin: 0;
+}
+/*canvas för alla sidor*/
+canvas {
+  width: 1024px;
+  height: 2920px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.canvas-ekonomi {
+  width: 1024px;
+  height: 1846px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.canvas-natur {
+  width: 1024px;
+  height: 1634px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.canvas-samhall {
+  width: 1024px;
+  height: 1754px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+/*välkomtexten*/
+h1 {
+  position: absolute;
+  top: 50px;
+  left: 260px;
+  font-size: 50px;
+  font-family: "Gotham Black", sans-serif;
+  color: #ffffff;
+  white-space: nowrap;
+  margin-bottom: 4%;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 690px;
+  margin-left: 30px;
+}
+
+/*introduktions text*/
+h2 {
+  font-size: 16px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  color: black;
+  text-align: center;
+  margin: 5px 0;
+}
+
+/*öppethus text*/
+.right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: right;
+  margin-top: 900px;
+  margin-right: -20px;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  color: #000000;
+  text-align: right;
+  margin: 5px 0;
+}
+
+/*program*/
+h4 {
+  position: absolute;
+  top: 1880px;
+  left: 104px;
+  font-size: 35px;
+  font-family: "Gotham Black", sans-serif;
+  color: #ffffff;
+  margin-bottom: 4%;
+}
+.program-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  margin-top: 210px;
+  margin-left: 103px;
+}
+
+.program-container a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.program-container a:hover {
+  background-color: #89152c;
+  border-bottom: 2px solid #aa2741;
+  padding-bottom: 5px;
+}
+
+h5 {
+  font-size: 20px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  color: #ffffff;
+  text-align: left;
+  margin: 30px 0;
+}
+/*----------------program----------------------------*/
+.program-ekonomi h1 {
+  position: absolute;
+  top: 141px;
+  left: 244px;
+  font-size: 50px;
+  font-family: "Gotham Black", sans-serif;
+  color: #000000;
+  margin-bottom: 4%;
+}
+
+.program-natur h1 {
+  position: absolute;
+  top: 141px;
+  left: 134px;
+  font-size: 50px;
+  font-family: "Gotham Black", sans-serif;
+  color: #000000;
+  margin-bottom: 4%;
+}
+
+.program-samhall h1 {
+  position: absolute;
+  top: 141px;
+  left: 60px;
+  font-size: 50px;
+  font-family: "Gotham Black", sans-serif;
+  color: #000000;
+  margin-bottom: 4%;
+}
+
+/*----------------program----------------------------*/
+
+/*spelknappen*/
+.start-button {
+  position: absolute;
+  width: 450px;
+  height: 120px;
+  top: 1234px;
+  left: 250px;
+  font-size: 30px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  background-color: #aa2741;
+  color: #ffffff;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  /*transition: 0.3s;*/
+}
+
+.start-button:hover {
+  background-color: #000000;
+}
+
+/*design med rektanglar*/
+.rectangle {
+  width: 200px;
+  height: 100px;
+  background-color: #aa2741;
+  position: absolute;
+}
+
+.rectangle1 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 0px;
+  background-color: black;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle2 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 64px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle3 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 128px;
+  background-color: black;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle4 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 192px;
+  background-color: #aa2741;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle5 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 256px;
+  background-color: #aa2741;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle6 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 320px;
+  background-color: #aa2741;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle7 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 384px;
+  background-color: #aa2741;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle8 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 448px;
+  background-color: #aa2741;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle9 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 512px;
+  background-color: #aa2741;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle10 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 576px;
+  background-color: #aa2741;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle11 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 640px;
+  background-color: #aa2741;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle12 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 704px;
+  background-color: #aa2741;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle13 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 768px;
+  background-color: #aa2741;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle14 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 832px;
+  background-color: black;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle15 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 896px;
+  background-color: #aa2741;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.rectangle16 {
+  width: 64px;
+  height: 620px;
+  top: 0px;
+  left: 960px;
+  background-color: black;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.square {
+  width: 200px;
+  height: 100px;
+  background-color: #aa2741;
+  position: absolute;
+}
+
+.square1 {
+  width: 1024px;
+  height: 827px;
+  top: 1815px;
+  left: 0px;
+  background-color: #89152c;
+  border-top-left-radius: 85px;
+  border-top-right-radius: 85px;
+}
+
+.square2 {
+  width: 1024px;
+  height: 278px;
+  top: 2642px;
+  left: 0px;
+  background-color: #000000;
+}
+
+/*angeredsgymnasiets logga*/
+.angered-image {
+  width: 350px;
+  height: auto;
+  position: absolute;
+  top: 340px;
+  left: 340px;
+}
+
+/*popcorn bilder*/
+.popcorn-sead1 {
+  width: 230px;
+  height: auto;
+  position: absolute;
+  top: 920px;
+  left: 280px;
+}
+
+.popcorn-sead2 {
+  width: 230px;
+  height: auto;
+  position: absolute;
+  top: 790px;
+  left: 830px;
+  transform: rotate(95deg);
+}
+
+.popcorn-sead3 {
+  width: 230px;
+  height: auto;
+  position: absolute;
+  top: 1570px;
+  left: 280px;
+  transform: rotate(95deg);
+}
+
+.popcorn-popcorn1 {
+  width: 210px;
+  height: auto;
+  position: absolute;
+  top: 1530px;
+  left: 740px;
+}
+
+.popcorn-popcorn2 {
+  width: 240px;
+  height: auto;
+  position: absolute;
+  top: 1060px;
+  left: 600px;
+  transform: rotate(45deg);
+}
+
+.popcorn-popcorn3 {
+  width: 210px;
+  height: auto;
+  position: absolute;
+  top: 880px;
+  left: 30px;
+  transform: rotate(-135deg);
+}
+
+.popcorn-popcorn4 {
+  width: 210px;
+  height: auto;
+  position: absolute;
+  top: 1460px;
+  left: 100px;
+  transform: rotate(-45deg);
+}
+
+.my-rectangle {
+  width: 1023px;
+  height: 574px;
+  background-color: #aa2741;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+/*---------------------Programsidorna----------------------*/
+
+.my-square {
+  width: 1024px;
+  height: 1433px;
+  background-color: #aa2741;
+  position: absolute;
+  top: 413px;
+  left: 0px;
+}
+
+.sq {
+  width: 200px;
+  height: 100px;
+  background-color: #aa2741;
+  position: absolute;
+}
+.sq1 {
+  width: 102.4px;
+  height: 93px;
+  top: 320px;
+  left: 0px;
+  background-color: #aa2741;
+  border-top-left-radius: 51.5px;
+  border-top-right-radius: 51.5px;
+}
+
+.sq2 {
+  width: 102.4px;
+  height: 93px;
+  top: 320px;
+  left: 102.4px;
+  background-color: #aa2741;
+  border-top-left-radius: 51.5px;
+  border-top-right-radius: 51.5px;
+}
+
+.sq3 {
+  width: 102.4px;
+  height: 93px;
+  top: 320px;
+  left: 204.8px;
+  background-color: #aa2741;
+  border-top-left-radius: 51.5px;
+  border-top-right-radius: 51.5px;
+}
+
+.sq4 {
+  width: 102.4px;
+  height: 93px;
+  top: 320px;
+  left: 307.2px;
+  background-color: #aa2741;
+  border-top-left-radius: 51.5px;
+  border-top-right-radius: 51.5px;
+}
+
+.sq5 {
+  width: 102.4px;
+  height: 93px;
+  top: 320px;
+  left: 409.6px;
+  background-color: #aa2741;
+  border-top-left-radius: 51.5px;
+  border-top-right-radius: 51.5px;
+}
+
+.sq6 {
+  width: 102.4px;
+  height: 93px;
+  top: 320px;
+  left: 512px;
+  background-color: #aa2741;
+  border-top-left-radius: 51.5px;
+  border-top-right-radius: 51.5px;
+}
+
+.sq7 {
+  width: 102.4px;
+  height: 93px;
+  top: 320px;
+  left: 614.4px;
+  background-color: #aa2741;
+  border-top-left-radius: 51.5px;
+  border-top-right-radius: 51.5px;
+}
+
+.sq8 {
+  width: 102.4px;
+  height: 93px;
+  top: 320px;
+  left: 716.8px;
+  background-color: #aa2741;
+  border-top-left-radius: 51.5px;
+  border-top-right-radius: 51.5px;
+}
+
+.sq9 {
+  width: 102.4px;
+  height: 93px;
+  top: 320px;
+  left: 819.2px;
+  background-color: #aa2741;
+  border-top-left-radius: 51.5px;
+  border-top-right-radius: 51.5px;
+}
+
+.sq10 {
+  width: 102.4px;
+  height: 93px;
+  top: 320px;
+  left: 921.6px;
+  background-color: #aa2741;
+  border-top-left-radius: 51.5px;
+  border-top-right-radius: 51.5px;
+}
+
+/*bilder ekonomi*/
+.ekonomibild {
+  width: 362px;
+  height: auto;
+  position: absolute;
+  top: 1410px;
+  left: 102.4px;
+}
+
+.ekonomilagbok {
+  width: 362px;
+  height: 248px;
+  position: absolute;
+  top: 1410px;
+  left: 552.4px;
+}
+
+/*bilder natur*/
+.naturbild {
+  width: 360px;
+  height: 245px;
+  position: absolute;
+  top: 1413px;
+  left: 102.4px;
+}
+
+.naturlabb {
+  width: 362px;
+  height: 245px;
+  position: absolute;
+  top: 1410px;
+  left: 554.4px;
+}
+
+/*bilder samhäll*/
+
+/*ramar och pilar*/
+.bigframe1 {
+  width: 1080px;
+  height: 1515px;
+  position: absolute;
+  top: 370px;
+  left: -18px;
+}
+
+.dashedframe1 {
+  width: 850px;
+  height: 570px;
+  position: absolute;
+  top: 770px;
+  left: 40px;
+}
+
+.dashedframe2 {
+  width: 920px;
+  height: 300px;
+  position: absolute;
+  top: 910px;
+  left: 44px;
+}
+
+.dashedframe3 {
+  width: 930px;
+  height: 420px;
+  position: absolute;
+  top: 900px;
+  left: 42px;
+}
+
+/*ekonomi*/
+.arrow1 {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  top: 1132px;
+  left: 80px;
+}
+/*natur*/
+.arrow2 {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  top: 1090px;
+  left: 80px;
+}
+/*samhäll*/
+.arrow3 {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  top: 1130px;
+  left: 80px;
+}
+/*ekonomi*/
+.whiteframe1 {
+  width: 530px;
+  height: 390px;
+  position: absolute;
+  top: 1350px;
+  left: 23px;
+}
+/*natur*/
+.whiteframe2 {
+  width: 530px;
+  height: 390px;
+  position: absolute;
+  top: 1347px;
+  left: 475px;
+}
+/*samhäll*/
+
+/*program info ekonomi*/
+.programinfo-ekonomi {
+  position: absolute;
+  top: 508px;
+  left: 105px;
+  color: #ffffff;
+}
+
+.programinfo-ekonomi h2 {
+  font-size: 24px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.programinfo-ekonomi h4 {
+  top: 150px;
+  left: 6px;
+  color: #000000;
+  font-size: 48px;
+}
+
+.inriktningsinfo-ekonomi {
+  position: absolute;
+  top: 830px;
+  left: 105px;
+  color: white;
+}
+
+.inriktning {
+  margin-bottom: 80px;
+}
+
+.inriktning h3 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.inriktning h5 {
+  font-size: 24px;
+  margin: 5px 0;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  text-align: left;
+}
+
+.bilagan1 a {
+  text-decoration: none;
+  position: absolute;
+  top: 1276px;
+  left: 75px;
+  z-index: 10;
+}
+
+.bilagan1 a h6 {
+  font-size: 20px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  text-align: left;
+  color: #f0d3b5;
+  cursor: pointer;
+}
+
+.bilagan1 a:hover h6 {
+  color: #f9f9f9;
+}
+
+.kika-ekonomi h6 {
+  position: absolute;
+  top: 1276px;
+  left: 365px;
+  font-size: 20px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  color: #000000;
+}
+
+.extratext {
+  position: absolute;
+  top: 1700px;
+  left: 85px;
+}
+
+.extratext h6 {
+  font-family: "Gotham Book", sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  color: #ffffff;
+  text-align: left;
+  margin: 5px 0;
+}
+
+/*programinfo natur*/
+.programinfo-natur {
+  position: absolute;
+  top: 508px;
+  left: 105px;
+  color: #ffffff;
+}
+
+.programinfo-natur h2 {
+  font-size: 24px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.programinfo-natur h4 {
+  top: 150px;
+  left: 6px;
+  color: #000000;
+  font-size: 48px;
+}
+
+.inriktningsinfo-natur {
+  position: absolute;
+  top: 800px;
+  left: 105px;
+}
+
+.inriktning.natur h3 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 120px;
+  text-align: left;
+  font-family: "Gotham Book", sans-serif;
+}
+
+.inriktning.natur h5 {
+  font-size: 24px;
+  margin: 4px 0;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  text-align: left;
+  color: white;
+}
+
+.bilagan2 a {
+  text-decoration: none;
+  position: absolute;
+  top: 1236px;
+  left: 85px;
+  z-index: 10;
+}
+
+.bilagan2 a h6 {
+  font-size: 20px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  text-align: left;
+  color: #f0d3b5;
+  cursor: pointer;
+}
+
+.bilagan2 a:hover h6 {
+  color: #f9f9f9;
+}
+
+.kika-natur h6 {
+  position: absolute;
+  top: 1235px;
+  left: 365px;
+  font-size: 20px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  color: #000000;
+}
+
+/*programinfo samhäll*/
+.programinfo-samhall {
+  position: absolute;
+  top: 508px;
+  left: 105px;
+  color: #ffffff;
+}
+
+.programinfo-samhall h2 {
+  font-size: 24px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.programinfo-samhall h4 {
+  top: 150px;
+  left: 6px;
+  color: #000000;
+  font-size: 48px;
+}
+
+.inriktningsinfo-samhall {
+  position: absolute;
+  top: 800px;
+  left: 105px;
+}
+
+.inriktning.samhall h3 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 120px;
+  text-align: left;
+  font-family: "Gotham Book", sans-serif;
+}
+
+.inriktning.samhall h5 {
+  font-size: 24px;
+  margin: 4px 0;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  text-align: left;
+  color: white;
+}
+
+.bilagan3 a {
+  text-decoration: none;
+  position: absolute;
+  top: 1276px;
+  left: 85px;
+  z-index: 10;
+}
+
+.bilagan3 a h6 {
+  font-size: 20px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  text-align: left;
+  color: #f0d3b5;
+  cursor: pointer;
+}
+
+.bilagan3 a:hover h6 {
+  color: #f9f9f9;
+}
+
+.kika-samhall h6 {
+  position: absolute;
+  top: 1275px;
+  left: 365px;
+  font-size: 20px;
+  font-family: "Gotham Book", sans-serif;
+  font-weight: 100;
+  color: #000000;
+}
+.extratext-samhall {
+  position: absolute;
+  top: 1700px;
+  left: 85px;
+}
+
+.extratext-samhall h6 {
+  font-family: "Gotham Book", sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  color: #ffffff;
+  text-align: left;
+  margin: 5px 0;
+}
+
+/*tillbaka knapp*/
+.tillbaka-knapp {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 10;
+}
+
+.tillbaka-knapp a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f0d3b5;
+  color: #000;
+  text-decoration: none;
+  font-family: "Gotham Book", sans-serif;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+.tillbaka-knapp a:hover {
+  background-color: #e0c2a3;
+}
