@@ -6,16 +6,6 @@ let startButton;
 let restartButton;
 let LandingSpeed = 2;
 
-const canvas = document.getElementById("gameCanvas");
-
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-
-window.addEventListener("resize", resizeCanvas);
-resizeCanvas();
-
 function setup() {
     createCanvas(1024, 1366);
     restartButton = createButton('↻');
