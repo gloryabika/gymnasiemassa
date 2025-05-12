@@ -8,12 +8,13 @@
   src: url("fonts/Gotham\ Book.otf") format("opentype");
 }
 
-body {
+/*body {
   background-color: #f1e2b0;
   font-family: "Segoe UI", sans-serif;
   position: relative;
   margin: 0;
-}
+}*/
+
 /*canvas för alla sidor*/
 canvas {
   width: 1024px;
